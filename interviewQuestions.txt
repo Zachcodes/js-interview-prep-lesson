@@ -1,0 +1,157 @@
+Questions with * are questions we haven’t taught you.  You’ll need to research them and teach yourself! 
+
+HTML / CSS
+
+1. What is a selector
+
+A selector is what is used to target a certain element in the dom. For example, the ruleset targeting h1 {} will target all h1's in the document. .square will get all squares in the document. 
+
+2. Describe the box model
+
+The box model refers to the box that wraps every dom element. It consists of 4 parts. Margin which pushes element away from other elements, the border which is on the outside of the element and can be colored, the padding which is see through and pushes the content away from the border and the content which is an image or some text or a background color 
+
+3. Describe how you would make a paper card effect in CSS ( Like the products on Jane.com )
+
+You would have one surrounding dom element. It would be display of flex column and have two child elements. The top element would be the image which is a clickable link. The bottom div would contain the description or name of the product as well as add to cart button or anything else that you need 
+
+4. What are the different properties for position and how do they work
+ 
+static - elements appear in position on the webpage as they would 
+relative - element is positioned relative to its normal flow in the document 
+absolute - element is positioned according to its closest positioned ancestor (not of type static)
+fixed - element is positioned relative to the browser window
+sticky - positioned according to pre defined position in document then becomes fixed 
+
+
+5. What is the difference between caret ( < ) comma ( , ) and space (  ) in a css selector.
+> is for selecting elements who have a specific type of element as parent 
+space is for selecting all elements inside another type of element as far nested as need be
+, select all elements of css selector. Comma just specificies a new selector 
+
+6. How could you make a circle in CSS
+
+Specify a height and width on an element and then give it a border radius of 50% 
+
+7. Describe Pseudo selectors in CSS * 
+
+Used to define a special state of an element. It can be used to tell an element what to do when it is hovered over by the mouse, what a link should look like when it has been visited or select the first child of a specific element type 
+
+8. How could you make a star using CSS shapes only * 
+
+You could create one dom element and then give it border bottom that has color and a pixel amount. then give the left and right borders a pixel width but make them transparent. This will give the illusion of a triangle. you can transorm the shape and rotate it so its sitting sideways. Then use the css pseudo selector ::before to insert another triangle position absolutely on top of it and then transform. Repeat again using ::after to create another triangle that's positioned absolutely. 
+
+9. What is the transform property and how does it work *
+
+It allows you to apply a 2d or 3d transormation to an element such as rotate, scaling or skewing it. 
+
+JAVASCRIPT
+
+1. Describe closures and why they are important
+
+A closure is important because a creates a new scope context so that functions and objects can remember variables that are not placed on the global scope and specific to that instance of the returned inner function or object with methods
+
+2. Describe context
+
+Context describes how a function was invoked and what the value of this (object) should be. There is explicit, implicit and default. JavaScript will check first to see if it was explicitly told what context to use using either .call, .apply or .bind. If not, then it checks to see if it was invoked as a method on an object. If so, that object is used as the value of this. If not it falls back to using the global object or undefined if in strict mode. 
+
+3. What is hoisting*
+
+Hoisting describes how JavaScript handles the compilation process. it will hoist function declarations and variable declarations in memory so that they can be referenced before they are declared in the document flow. Initializations or the assigning of a value to a variable are not hoisted. Hoisted variables will have an undefined value until they are assigned a value. 
+
+4. What’s the difference between a for loop and a for in loop
+
+for loops are used for looping through arrays because you can specify a condition that the loop must stop. You are also guaranteed execution order. For in loops are great for looping through the enumerable properties of an object. The for in loop will also loop through the inherited properties of an object. 
+
+5. Explain let vs var
+
+var is used to declare a variable. It will place the variable on the global scope if used outside of a function body. let on the other hand also declares a variable but it does not place it on the global scope. IT places it in another part of memory that we cannot access and also allows for block scoping which is when you have scope that is specific to the block like a for loop or if statement. 
+
+6. Describe square bracket notation and when you would use it (hint arrays and objects)
+
+square bracket notation is used for accessing properties of an object or indexes in an array. You can pass a numbered index to an array to get the value at that index or you can pass a string to get the property by that name from an object. 
+
+7. Describe 3 es2015 features and how they differ from ES5
+
+scoping with let and const. Let and const create block scope so they allow if statement and for loops to have their own scoped variables. 
+
+arrow functions allow for more concise function expressions and if they only have one expression can automatically return 
+
+classes are syntax sugar on existing constructor functions. allow for prototype methods to be written in the class body and also cannot be invoked without the new keyword which avoids placing things on the global scope. 
+
+8. Describe how scoping works in JavaScript.
+
+there is the global scope. Then a function being invoked will create a new scope. Each time a function is invoked, it creates a new scope. variables can be referenced in parent scope of a function but never from a nested function scope. 
+
+9. What does the statement ‘use strict’ do *
+
+a few things. primarily it makes it so that functions dont use the global object as the value of this if no explicit or implict context. It also throws some errors javascript doesnt usually throw.  
+
+10. Explain how to handle errors in JS.
+
+use try catch and then do what you need to inside of the body of the catch function.
+
+11. How does inheritance work in JavaScript *
+
+when you create a new object it will inherit the properties of the parent objects prototype. an object literal will inherit the properties from the global Object. an object created using a constructor function will inherit from that functions prototype who in turn inherits from the prototype of Object. The top of the inheritance chain is null. 
+
+12. What is a prototype in JavaScript
+
+a prototype is an object that has shared properties. Objects created using the prototypes parents can all see the prototype and access these shared methods or values. 
+
+13. What’s the difference between == and === in JavaScript
+
+one does type comparison the other does not. triple equals will not convert a string to a number. 
+
+14. What is event bubbling in the DOM *
+
+event bubbling is when you click a button on the dom it will emit an onclick event. The button can handle that event with a callback function. once finished, that event will continue bubbling up to all of the parent elements of that button and they can choose to handle that event as well. 
+
+REACT
+
+1. What is a component?
+
+a component is a reusable piece of code that creates a dom element 
+
+2. What’s the difference between an element and a Component?
+
+an element is what is eventually placed onto the dom. A component is either a function or an extended class from the React Component class that has methods and state. It will determine how the dom element should look and what properties it has. 
+
+3. What is setState and what does it do?
+
+setState is a method given to us by React that allows us to set the state of a react Component. It will take in an object and perform a merge of the existing state of the component and the new properties we are saying we want to overwrite. 
+
+4. What are the differences between a class component and a functional component?
+
+a class component holds some internal state and can have lifecycle/class methods. a functional component does not have class methods or state and is simply concerned with rendering out a dom element. 
+
+5. What are refs in react * 
+
+refs in react are used to easily access a dom element in class methods. it is the same thing as doing something like document.getelementbyid.
+
+6. What are keys in react and why should we use them with lists *
+
+keys in react are used to help react know when items in a list have changed order, are added or removed. keys should be unique to the array that they are being used within. They are used to make react as efficient as possible. If you dont use a unique key and add an item to the beginning of an array, react will think that it needs to rerender every item in the tree instead of realizing something was added to the beginning. If you use keys, react knows what was added and what is new and will rerender the dom more efficiently. 
+
+7. What are React lifecycle events
+
+lifecycle events refers to the process that react goes through in the lifecycle of a component. It will call certain named methods on a class component if they exist throughout the lifecycle of the component. this is useful for us the developer because we can carry out certain processes or set state or make an ajax call depending on what stage of life this component is in. 
+
+8. Where should you make AJAX requests
+
+component did mount so we know that the component has been mounted. not in the render because that will make an ajax call everytime there is a rerender.
+
+9. How is React different from vanilla JS, jQuery, and Angular
+
+it first off is a js library compared to angular which is a framework. implementation details are left up to the developer. It gives us many optimizations and lifecycle methods we don't get with vanilla js. it also is a one way data flow library meaning that the dom dispatches events that describe how it would like to update state, react takes care of the updating and updates the dom once it has finished calculating new state. Main difference between react and jquery is that jquery works with updating the dom directly and react utilizes a virtual dom to compare the real dom and the new updated virtual dom. once comparisons are done, react updates the dom. 
+
+10. What is unidirectional data flow in React
+
+all data flows from the model. React will update state and then construct the dom. The dom elements do no update themselves. They just take events and make react aware of them. 
+
+11. Describe PropTypes
+
+proptypes are used in react development to specify what props a component will receive and what type of javascript value they will be. if passed in props are not of that value, it will throw a warning in the console 
+
+12. Describe component based architecture
+
+component based architecture refers to using multiple small functions to compose the dom tree. Component based architecture utilizes a parent child hiearchy. State can exist in a parent and flow down to the child but not vice versa. Component based architecture can be visualized as a tree of components flowing down.
